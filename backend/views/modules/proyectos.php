@@ -42,7 +42,7 @@ if(!$_SESSION["validar"]){
                     </div>
                     <!-- CUERPO DE LA CARD -->
                     <div class="card-body">
-                        <table id="miTabla" class="table table-bordered dt-responsive table-hover nowrap">
+                        <table id="myTable" class="table table-bordered dt-responsive table-hover nowrap">
                             <thead>
                                 <tr>
                                     <th>Nombre</th>

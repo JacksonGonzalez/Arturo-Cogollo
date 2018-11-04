@@ -51,7 +51,7 @@ if(!$_SESSION["validar"]){
                             <!-- INPUT NOMBRE -->
                             <div class="form-group">
                               <label for="name">Nombre del Proyecto</label>
-                              <input type="text" class="form-control" id="name" name="name" placeholder="Nombre Categoria" required>
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Nombre del Proyecto" required>
                             </div>
                   
                             <!-- INPUT DESCRIPCION -->

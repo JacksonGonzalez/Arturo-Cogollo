@@ -537,7 +537,7 @@ class GestorProyecto{
                               <div class="form-group">
                               	<div id="preview"></div>
                                 <label for="imagen">Imagen</label>
-                                <input type="file" class="form-control-file" name="imagenAdd" id="imagenEdit" required>
+                                <input type="file" class="form-control-file" name="imagenAdd" id="imagenProyect" required>
                                 <br>
                                 
                               </div>

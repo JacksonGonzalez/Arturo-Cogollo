@@ -13,3 +13,5 @@ document.getElementById("imagenProyect").onchange = function(e) {
  
   reader.readAsDataURL(e.target.files[0]);
 }
+
+
