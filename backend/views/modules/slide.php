@@ -47,6 +47,7 @@ if(!$_SESSION["validar"]){
                         <select class="js-example-basic-multiple" name="proyectsSlice[]" multiple="multiple">
                           <?php 
                             $slide -> listarProyectos();
+                            $slide -> quitarSlide();
                           ?>
                         </select>
                         <input type="submit" name="enviar" class="btn btn-primary" value="Cargar">

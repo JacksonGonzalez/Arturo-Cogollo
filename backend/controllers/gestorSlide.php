@@ -72,12 +72,65 @@ class GestorSlide{
 						<img src="'.$item["image"].'" class="rounded text-center" height="auto" width="150" />
 					</td>
 					<td>
-						<a class="btn btn-danger" href="index.php?action=slice&idDel='.$item["idProject"].'">
+						<a class="btn btn-danger" href="index.php?action=slide&idDel='.$item["idProject"].'">
 	                  		<i class="fas fa-trash-alt"></i>
 	                  	</a>
 					</td>
 				</tr>';
 		}
+	}
+
+
+
+	#QUITAR SLIDE DE LA TABLA PRINCIPAL 
+	#---------------------------------------------------------
+	public function quitarSlide(){
+		if(isset($_GET["idDel"])){
+			$idDel = $_GET["idDel"];
+
+			$buscar = GestorProyectoModel::buscarProyectoModel($idDel, "projects");
+			// var_dump($buscar);
+
+			echo '<script>
+				swal({
+				  title: "Esta seguro de quitar al proyecto '.$buscar["name"].' del slide?",
+				  type: "warning",
+				  showCancelButton: true,
+				  confirmButtonColor: "#3085d6",
+				  cancelButtonColor: "#d33",
+				  confirmButtonText: "Si, Estoy Seguro!"
+				}).then((result) => {
+				  if (result.value) {
+				    window.location.href="?action=slide&idBor='.$buscar["idProject"].'"
+				  }else{
+				  	 window.location = "slide";
+				  }
+				})
+				</script>';
+		}
+
+		if(isset($_GET["idBor"])){
+			
+			$idBorrar = $_GET["idBor"];
+
+			$buscar =  GestorProyectoModel::buscarProyectoModel($idBorrar, "projects");
+			$eliminar = GestorSlideModel::eliminarSlideModel($idBorrar, "slice");
+
+			// var_dump($respuesta);
+
+			echo 	'<script>
+						swal({
+						  title: "El proyecto '.$buscar["name"].' ha sido removido del slide?",
+						  text: "Fue Removido!",
+						  type: "success",
+						  confirmButtonText: "Removido"
+						}).then(function(){
+						    window.location = "slide";
+						});
+					</script>';
+
+		}
+
 	}
 
 }

@@ -7,7 +7,20 @@ class GestorSlideModel{
 	#LISTAR LOS PROYECTOS 
 	#-----------------------------------
 	public function mostrarProyectos($tabla){
-		$stmt = Conexion::conectar()->prepare("SELECT idProject, name, image FROM $tabla");
+		$stmt = Conexion::conectar()->prepare("SELECT idProject, name, image FROM projects WHERE NOT idProject IN (SELECT idProject from slice)");
+
+		$stmt -> execute();
+
+		return $stmt -> fetchAll();
+
+		$stmt -> close();
+	}
+
+
+	#LISTAR LOS SLICE
+	#-------------------------------------------
+	public function mostrarSlide($tabla){
+		$stmt = Conexion::conectar()->prepare("SELECT idProject as idProyect FROM $tabla");
 
 		$stmt -> execute();
 
@@ -47,4 +60,29 @@ class GestorSlideModel{
 
 		$stmt -> close();
 	}
+
+
+	#ELIMINAR EL ARCHIVO DEL SLIDE
+	#---------------------------------------
+	public function eliminarSlideModel($id, $tabla){
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idProject = :id");
+
+		$stmt->bindParam(":id", $id, PDO::PARAM_STR);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}
+
+		else{
+
+			return "error";
+
+		}
+
+		$stmt->close();
+	}
+
+
 }
