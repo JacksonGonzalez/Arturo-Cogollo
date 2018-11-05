@@ -8,28 +8,6 @@
               $slide -> slide();
           ?>
           
-          <!-- Slide Two - Set the background image for this slide in the line below -->
-         <!--  <a href="detail" class="carousel-item active" style="background-image: url('http://www.arturocogollo.com/images/<?php echo '2.jpg'; ?>')">
-          </a> -->
-          <!-- Slide Three - Set the background image for this slide in the line below -->
-          <!-- <a href="detail" class="carousel-item" style="background-image: url('http://www.arturocogollo.com/images/<?php echo '3.jpg'; ?>')">
-          </a> -->
-          <!-- Slide Three - Set the background image for this slide in the line below -->
-          <!-- <a href="detail" class="carousel-item" style="background-image: url('http://www.arturocogollo.com/images/<?php echo '4.jpg'; ?>')">
-          </a> -->
-          <!-- Slide Three - Set the background image for this slide in the line below -->
-          <!-- <a href="detail" class="carousel-item" style="background-image: url('http://www.arturocogollo.com/images/<?php echo '5.jpg'; ?>')">
-          </a> -->
-          
-          <!-- Slide Three - Set the background image for this slide in the line below -->
-          <!-- <a href="detail" class="carousel-item" style="background-image: url('http://www.arturocogollo.com/images/<?php echo '7.jpg'; ?>')">
-          </a> -->
-          <!-- Slide Three - Set the background image for this slide in the line below -->
-          <!-- <a href="detail" class="carousel-item" style="background-image: url('http://www.arturocogollo.com/images/<?php echo '8.jpg'; ?>')">
-          </a> -->
-          <!-- Slide Three - Set the background image for this slide in the line below -->
-          <!-- <a href="detail" class="carousel-item" style="background-image: url('http://www.arturocogollo.com/images/<?php echo '9.jpg'; ?>')">
-          </a> -->
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <div class="circle-prev">
