@@ -45,4 +45,19 @@ class GestorProyectoModel{
 		$stmt -> close();
 	}
 
+
+	#BUSCAR LA INFORMACION DE UN PROYECTO EN ESPECIFICO
+	#--------------------------------------------------------
+	public function buscarProyecto($id, $tabla){
+		$stmt = Conexion::conectar()->prepare("SELECT idProject, name, image, description FROM $tabla WHERE idProject = :id AND estado = 0");
+
+		$stmt -> bindParam(":id", $id, PDO::PARAM_STR);
+
+		$stmt -> execute();
+
+		return $stmt -> fetch();
+
+		$stmt -> close();
+	}
+
 }

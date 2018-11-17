@@ -38,12 +38,17 @@ class GestorProyecto{
 					$rutaImg = $item["ruta"];
 				}
 
-				echo '<div class="item active">
-	                    <a data-trigger="preview2" href="javascript:;" style=" cursor: zoom-in;">
-	                      <!-- <i class=" fa fa-expand "></i> -->
-	                    <img src="backend/'.$rutaImg.'" style="width: 100%;"  class=" imagefield">
-	                    </a> 
-	                  </div>';
+				// echo '<div class="item active">
+	   //                  <a data-trigger="preview2" href="javascript:;" style=" cursor: zoom-in;">
+	   //                    <!-- <i class=" fa fa-expand "></i> -->
+	   //                  <img src="backend/'.$rutaImg.'" style="width: 100%;"  class=" imagefield">
+	   //                  </a> 
+	   //                </div>';
+				echo '<div class="g-mediumheight--xs g-bg-position--center swiper-slide" style="background: url(backend/'.$rutaImg.');">
+                                <a href="backend/'.$rutaImg.'" data-fancybox="gallery" data-caption="Caption para una sola imagen"> 
+                                    <div class="g-mediumheight--xs" style="cursor: zoom-in;"></div>
+                                </a>
+                            </div>';
             }
 	}
 
@@ -66,6 +71,13 @@ class GestorProyecto{
 	          </div>';
 
         }
+	}
+
+	public function tituloProyecto($id){
+
+		$buscar = GestorProyectoModel::buscarProyecto($id, "projects");
+
+		echo $buscar['name'];
 	}
 
 }

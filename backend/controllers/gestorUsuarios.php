@@ -18,8 +18,8 @@ class GestorUsuario{
 
 			//INICIO DE LAS VALIDACIONES
 			if(!empty($nameUser) && !empty($lastnameUser) && !empty($phoneUser) && !empty($emailUser) && !empty($passwordUser) && !empty($rolUser)){
-
-				$passUser = crypt($passwordUser);
+				$passUser = password_hash($passwordUser, PASSWORD_DEFAULT);
+				// $passUser = crypt($passwordUser);
 				// error_reporting(0);
 				$datos = array('name' => $nameUser, "lastname" => $lastnameUser, "phone" => $phoneUser, "email" => $emailUser, "password" => $passUser, "rol" => $rolUser, "attempts" => 0);
 

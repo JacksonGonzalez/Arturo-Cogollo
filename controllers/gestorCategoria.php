@@ -9,7 +9,7 @@ class GestorCategoria{
 		$respuesta = GestorCategoriaModel::mostrarCategoriasModel("categories");
 
 		foreach ($respuesta as $key => $item) {
-			echo '<li><a class="subtitle" href="index.php?action=proyects&id='.$item["idCategory"].'">'.$item["name"].'</a></li>';
+			echo '<li class="s-header__nav-menu-item"><a class="s-header__nav-menu-link s-header__nav-menu-link-divider" href="index.php?action=proyects&id='.$item["idCategory"].'">'.$item["name"].'</a></li>';
 		}
 
 	}
